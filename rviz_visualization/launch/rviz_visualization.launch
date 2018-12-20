@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="map_visualizer" pkg="rviz_visualization" type="map_visualizer.py" output="screen">
+    </node>  
+</launch>
