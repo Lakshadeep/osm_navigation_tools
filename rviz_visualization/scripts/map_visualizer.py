@@ -44,7 +44,7 @@ class MapVisualizerNode(object):
         marker_array = MarkerArray()
         id_count = 0
         for pillar in data.pillars:
-            marker_array.markers.append(MarkerGenerator.generate_polygon_marker(self, id=id_count, frame_id='/map', lifetime=3600, scale=0.1, color_rgb=[0,0,1],points=pillar.shape.points))
+            marker_array.markers.append(MarkerGenerator.generate_point_marker(self, id=id_count, frame_id='/map', lifetime=3600, scale=0.1, color_rgb=[0,0,1.0],points=[pillar.point]))
             id_count = id_count + 1
 
         for wall_side in data.wall_sides:
@@ -56,7 +56,7 @@ class MapVisualizerNode(object):
             id_count = id_count + 1
 
         for features in data.features:
-            marker_array.markers.append(MarkerGenerator.generate_point_marker(self, id=id_count, frame_id='/map', lifetime=3600, scale=0.1, color_rgb=[0,1.0,0],points=feature.position))
+            marker_array.markers.append(MarkerGenerator.generate_point_marker(self, id=id_count, frame_id='/map', lifetime=3600, scale=0.1, color_rgb=[0,1.0,0],points=[feature.position]))
             id_count = id_count + 1
 
         self.semantic_map_markers_pub.publish(marker_array)

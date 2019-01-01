@@ -57,6 +57,7 @@ class MarkerGenerator(object):
         marker.action = marker.ADD
         marker.lifetime.secs = lifetime
         marker.scale.x = scale
+        marker.scale.y = scale
         marker.color.a = 1.0
         marker.color.r = color_rgb[0]
         marker.color.g = color_rgb[1]
